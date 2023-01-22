@@ -9,6 +9,8 @@ def priceCheck(products, productPrices, productSold, soldPrice):
     return errors
 
 
+
+
 # 2. SQL - Department Summary
 # SELECT d.NAME AS DEPARTMENT, COUNT(e.ID) AS COUNT
 # FROM DEPARTMENT d
@@ -25,6 +27,8 @@ def sum_of_digits(n):
         return n % 10 + sum_of_digits(n // 10)
 
 
+
+
 # 4. Recursive Numeric “Sequencer”
 def count_max_element(n, max_element=None, count=0):
     if n == 0:
@@ -35,6 +39,8 @@ def count_max_element(n, max_element=None, count=0):
         if n == max_element:
             count += 1
         return count_max_element(int(input()), max(max_element, n), count)
+
+
 
 
 # Tests of all tasks
