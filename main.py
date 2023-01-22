@@ -9,16 +9,6 @@ def priceCheck(products, productPrices, productSold, soldPrice):
     return errors
 
 
-
-
-# 2. SQL - Department Summary
-# SELECT d.NAME AS DEPARTMENT, COUNT(e.ID) AS COUNT
-# FROM DEPARTMENT d
-# LEFT JOIN EMPLOYEE e
-# ON d.ID = e.DEPT_ID
-# GROUP BY d.NAME
-# ORDER BY COUNT DESC, d.NAME;
-
 # 3.Recursive Digit “Summer”
 def sum_of_digits(n):
     if n == 0:
@@ -45,6 +35,8 @@ def count_max_element(n, max_element=None, count=0):
 
 # Tests of all tasks
 if __name__ == '__main__':
+    #--------------------------------------------
+    # 1. Price Check
     products = ['eggs', 'milk', 'cheese']
     productPrices = [2.89, 3.29, 5.79]
     productSold = ['eggs', 'eggs', 'cheese', 'milk']
@@ -58,5 +50,18 @@ if __name__ == '__main__':
         soldPrice=[18.99, 400.89]
     ))
 
+    #--------------------------------------------
+    # 3.Recursive Digit “Summer”
     print(sum_of_digits(2347623))
+
+    # 2. SQL - Department Summary
+    # SELECT d.NAME AS DEPARTMENT, COUNT(e.ID) AS COUNT
+    # FROM DEPARTMENT d
+    # LEFT JOIN EMPLOYEE e
+    # ON d.ID = e.DEPT_ID
+    # GROUP BY d.NAME
+    # ORDER BY COUNT DESC, d.NAME;
+
+    #--------------------------------------------
+    # 4. Recursive Numeric “Sequencer”
     print(count_max_element(int(input())))
