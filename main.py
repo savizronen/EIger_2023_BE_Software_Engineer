@@ -1,4 +1,4 @@
-
+# 1. Price Check
 def priceCheck(products, productPrices, productSold, soldPrice):
     product_price_dict = dict(zip(products, productPrices))
     errors = 0
@@ -9,6 +9,35 @@ def priceCheck(products, productPrices, productSold, soldPrice):
     return errors
 
 
+# 2. SQL - Department Summary
+# SELECT d.NAME AS DEPARTMENT, COUNT(e.ID) AS COUNT
+# FROM DEPARTMENT d
+# LEFT JOIN EMPLOYEE e
+# ON d.ID = e.DEPT_ID
+# GROUP BY d.NAME
+# ORDER BY COUNT DESC, d.NAME;
+
+# 3.Recursive Digit “Summer”
+def sum_of_digits(n):
+    if n == 0:
+        return 0
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+
+
+# 4. Recursive Numeric “Sequencer”
+def count_max_element(n, max_element=None, count=0):
+    if n == 0:
+        return "(" + max_element + " ; " + count + ")"
+    else:
+        if max_element is None:
+            max_element = n
+        if n == max_element:
+            count += 1
+        return count_max_element(int(input()), max(max_element, n), count)
+
+
+# Tests of all tasks
 if __name__ == '__main__':
     products = ['eggs', 'milk', 'cheese']
     productPrices = [2.89, 3.29, 5.79]
@@ -22,3 +51,6 @@ if __name__ == '__main__':
         productSold=['rice', 'cheese'],
         soldPrice=[18.99, 400.89]
     ))
+
+    print(sum_of_digits(2347623))
+    print(count_max_element(int(input())))
